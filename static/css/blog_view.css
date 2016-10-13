@@ -1,0 +1,35 @@
+body {
+    height: 100%;
+    display: block;
+    position: relative;
+    font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
+    font-size: 14px;
+    line-height: 2;
+    color: #555;
+    background: #fff;
+    margin: 0;
+}
+
+.header {
+    background: #f5f5f5;
+    margin: 0 auto;
+    height: 70px;
+
+}
+
+.content {
+    display: block;
+    padding-top: 0;
+    width: 880px;
+    margin: 0 auto;
+}
+
+.time {
+    margin: 5px;
+    font-size: small;
+}
+.header_in{
+    font-size: 22px;
+    position: relative;
+    font-weight: bolder;
+}
