@@ -10,7 +10,7 @@ class Blog(db.Model, ModelMixin):
     content = db.Column(db.String())
     created_time = db.Column(db.Integer, default=0)
     # user_id = db.Column(db.Integer)
-    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+    # user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     comments = db.relationship('Comment', backref="blog")
 
     def __init__(self, form):

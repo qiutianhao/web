@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/css/index.css">
+
+    <title>Blog</title>
+</head>
+<body>
+<div class="header">
+    <div class="header_in">
+        <a class="header_logo" href="/">大宝剑</a>
+        <a class="blog-index" h   ref="#">Nodes</a>
+    </div>
+
+</div>
+
+<div class="content">
+    {% for m in ms %}
+        <hr>
+        <div class="blog-content">
+            <span class="blog-heading">qiu的博客：</span>{{ m.content }}
+            <a class='link' href="https://www.zybuluo.com/qiuqiuqiu/note/530667">>>more</a>
+        </div>
+        <div class="time">
+            发布时间： {{ m.created_time }}
+        </div>
+    {% endfor %}
+</div>
+</body>
+</html>
+

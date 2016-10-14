@@ -6,12 +6,11 @@ $(document).ready(function(){
     //给按钮绑定 click 事件
     $('#id-button-add-blog').on('click', function(){
         var blog = $('#id-input-blog').val();
-        log('blog', blog);
         var form = {
             blog: blog
         };
         var requrest = {
-            url: '/api/blog/add',
+            url: '/add',
             type: 'post',
             data: form,
             success: function () {

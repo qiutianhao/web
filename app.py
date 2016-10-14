@@ -3,7 +3,6 @@ from flask_migrate import Migrate, MigrateCommand
 from flask_script import Manager
 from models import db
 
-from models.user import User
 from models.blog import Blog
 from models.comment import Comment
 
@@ -13,13 +12,14 @@ manager = Manager(app)
 
 
 def register_routes(app):
-    # from routes.todo import main as routes_todo
+    from routes.blog import main as routes_blog
     # from routes.node import main as routes_node
     # from routes.topic import main as routes_topic
-    from routes.auth import main as routes_auth
+    # from routes.auth import main as routes_auth
     # from routes.comment import main as routes_comment
 
-    app.register_blueprint(routes_auth, url_prefix='/auth')
+    app.register_blueprint(routes_blog)
+    # app.register_blueprint(routes_auth, url_prefix='/auth')
     # app.register_blueprint(routes_node, url_prefix='/node')
     # app.register_blueprint(routes_topic, url_prefix='/topic')
     # app.register_blueprint(routes_comment, url_prefix='/comment')
@@ -64,5 +64,10 @@ if __name__ == '__main__':
     configure_manager()
     configure_app()
     manager.run()
-
-# gunicorn -b '0.0.0.0:80' redischat:app
+"""
+gunicorn -b '0.0.0.0:80' redischat:app
+python app.py db init
+python app.py db migrate
+python app.py db upgrade
+python app.py server
+"""

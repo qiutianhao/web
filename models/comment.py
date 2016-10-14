@@ -9,7 +9,7 @@ class Comment(db.Model, ModelMixin):
     content = db.Column(db.String())
     created_time = db.Column(db.String())
     # user_id = db.Column(db.Integer)
-    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+    # user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     blog_id = db.Column(db.Integer, db.ForeignKey('blogs.id'))
 
     def __init__(self, form):

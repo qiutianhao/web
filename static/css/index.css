@@ -6,17 +6,28 @@ body {
     font-size: 14px;
     line-height: 2;
     color: #555;
-    background: #fff;
+    background: #F9F9F5;
+
     margin: 0;
 }
 
+.link{
+    text-decoration: none;
+}
+.link:hover{
+    background-color: lightgray;
+}
 .header {
     background: #f5f5f5;
     margin: 0 auto;
     height: 70px;
+}
+.header_in{
+    width: 1000px;
+    margin: 0 auto;
+
 
 }
-
 .content {
     display: block;
     padding-top: 0;
@@ -28,8 +39,15 @@ body {
     margin: 5px;
     font-size: small;
 }
-.header_in{
+.header_logo{
     font-size: 22px;
-    position: relative;
     font-weight: bolder;
+    position: relative;
+    text-align: left;
+    color: #000;
+    text-decoration: none;
+}
+
+.blog-heading{
+    font-size: 140%;
 }
