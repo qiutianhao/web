@@ -14,10 +14,10 @@ $(document).ready(function(){
             type: 'post',
             data: form,
             success: function () {
-                console.log('success', arguments)
+                log('success', arguments)
             },
             error: function () {
-                console.log('error', arguments)
+                log('error', arguments)
             }
         };
         $.ajax(requrest)

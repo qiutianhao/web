@@ -5,10 +5,10 @@ db = SQLAlchemy()
 
 
 def cur_time():
-    time_format = '%Y/%m/%d %H:%M:%S'
-    value = time.localtime(int(time.time()))
-    dt = time.strftime(time_format, value)
-    return str(dt)
+    # time_format = '%Y/%m/%d %H:%M:%S'
+    # value = time.localtime(int(time.time()))
+    # dt = time.strftime(time_format, value)
+    return int(time.time())
 
 
 class ModelMixin(object):

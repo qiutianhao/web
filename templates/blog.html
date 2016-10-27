@@ -1,19 +1,15 @@
 {% extends "base.html" %}
 {% block title %}
-Blog 名字
+Blog 内容
 {% endblock %}
 {% block content %}
-{% for m in ms %}
-        <hr>
         <div class="blog-heading">{{ m.title }}</div>
         <div class="blog-node">{{ m.node }}</div>
         <div class="blog-brief">{{ m.brief }}</div>
         <div class="blog-content">
-{#            {{ m.content }}#}
-            <a class='link' href="{{ url_for('.blog', blog_created_time=m.created_time) }}">>>more</a>
+            {{ m.content }}
         </div>
         <div class="time">
             发布时间： {{ m.created_time }}
         </div>
-    {% endfor %}
 {% endblock %}

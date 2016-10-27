@@ -6,9 +6,28 @@ Model = Blog
 self_id = id
 
 
+
 @main.route('/')
 def index():
     m = Model.query.all()
+    return render_template('index.html', ms=m)
+
+
+@main.route('/python')
+def python():
+    m = Model.query.filter_by(node='python')
+    return render_template('index.html', ms=m)
+
+
+@main.route('/javascript')
+def javascript():
+    m = Model.query.filter_by(node='javascript')
+    return render_template('index.html', ms=m)
+
+
+@main.route('/git')
+def git():
+    m = Model.query.filter_by(node='git')
     return render_template('index.html', ms=m)
 
 
@@ -25,17 +44,17 @@ def add():
     return redirect(url_for('.index'))
 
 
+@main.route('/blog/<int:blog_created_time>')
+def blog(blog_created_time):
+    m = Model.query.filter_by(created_time=blog_created_time)
+    return render_template('blog.html', m=m)
+
+
 @main.route('/delete/<int:m_id>')
 def delete(m_id):
     m = Model.query.get(m_id)
     m.delete()
     return redirect(url_for('.index'))
-
-
-@main.route('/edit_view/<int:m_id>')
-def edit_view(m_id):
-    m = Model.query.get(m_id)
-    return render_template('edit.html', m=m)
 
 
 @main.route('/edit/<int:m_id>', methods=['POST'])

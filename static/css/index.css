@@ -51,3 +51,8 @@ body {
 .blog-heading{
     font-size: 140%;
 }
+.blog-node{
+    background-color: lightblue;
+    position: relative;
+    display: flex;
+}

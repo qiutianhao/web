@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/css/index.css">
+
+{#    <script src="/static/js/blog_view.js"></script>#}
+
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+<div class="header">
+    <div class="header_in">
+        <a class="header_logo" href="/">大宝剑</a>
+        <a class="blog-index" href="{{ url_for('.python') }}">python</a>
+        <a class="blog-index" href="{{ url_for('.javascript') }}">javascript</a>
+        <a class="blog-index" href="{{ url_for('.git') }}">git</a>
+
+
+    </div>
+</div>
+<div class="content">
+{% block content %}{% endblock %}
+</div>
+</body>
+</html>
+
