@@ -2,6 +2,7 @@
 var log = function () {
     console.log(arguments)
 };
+alert('input password');
 $(document).ready(function(){
     //给按钮绑定 click 事件
     $('#id-button-add-blog').on('click', function(){
@@ -9,7 +10,7 @@ $(document).ready(function(){
         var form = {
             blog: blog
         };
-        var request = {
+        var requrest = {
             url: '/add',
             type: 'post',
             data: form,
@@ -20,14 +21,6 @@ $(document).ready(function(){
                 log('error', arguments)
             }
         };
-        $.ajax(request)
+        $.ajax(requrest)
     })
 });
-
-$(document).ready(function () {
-    $('#admin').on('click', function () {
-        alert('input password')
-    });
-    return false
-});
-

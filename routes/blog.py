@@ -6,9 +6,9 @@ Model = Blog
 self_id = id
 
 
-
 @main.route('/')
 def index():
+
     m = Model.query.all()
     return render_template('index.html', ms=m)
 
@@ -33,6 +33,7 @@ def git():
 
 @main.route('/add_view')
 def add_view():
+
     return render_template('add.html')
 
 
@@ -46,7 +47,8 @@ def add():
 
 @main.route('/blog/<int:blog_created_time>')
 def blog(blog_created_time):
-    m = Model.query.filter_by(created_time=blog_created_time)
+    m = Model.query.filter_by(created_time=blog_created_time).first()
+    print('m', m)
     return render_template('blog.html', m=m)
 
 

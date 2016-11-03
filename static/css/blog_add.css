@@ -13,7 +13,6 @@ body {
 
 .link{
     text-decoration: none;
-    color: #000;
 }
 .link:hover{
     background-color: lightgray;
@@ -26,11 +25,8 @@ body {
 .header_in{
     width: 1000px;
     margin: 0 auto;
-}
-.blog-index{
-    font-size: 30px;
-    padding: 0 30px;
-    color: black;
+
+
 }
 .content {
     display: block;
@@ -57,4 +53,7 @@ body {
 }
 .blog-node{
     background-color: lightblue;
+    position: relative;
+    display: flex;
 }
+

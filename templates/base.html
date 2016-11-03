@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/static/css/index.css">
-
-{#    <script src="/static/js/blog_view.js"></script>#}
-
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+    <script src="/static/js/blog_view.js"></script>
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
 <div class="header">
     <div class="header_in">
-        <a class="header_logo" href="/">大宝剑</a>
-        <a class="blog-index" href="{{ url_for('.python') }}">python</a>
-        <a class="blog-index" href="{{ url_for('.javascript') }}">javascript</a>
-        <a class="blog-index" href="{{ url_for('.git') }}">git</a>
+        <a class="header_logo" href="/blog">大宝剑</a>
+        <a class="blog-index link" href="{{ url_for('.python') }}">python</a>
+        <a class="blog-index link" href="{{ url_for('.javascript') }}">javascript</a>
+        <a class="blog-index link" href="{{ url_for('.git') }}">git</a>
+{#        <a class="blog-index link" id="admin" href="#">admin</a>#}
+
 
 
     </div>

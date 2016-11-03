@@ -1,13 +1,11 @@
 from models.user import User
-# from models.topic import Topic
 from routes import *
-
 # for decorators
 from functools import wraps
 
 main = Blueprint('auth', __name__)
-
 Model = User
+self_id = id
 
 
 def admin_required(f):
@@ -19,37 +17,35 @@ def admin_required(f):
             print('not admin')
             abort(404)
         return f(*args, **kwargs)
-
     return function
 
 
 @main.route('/')
 def index():
     # ms = Model.query.all()
-    return render_template('auth_index.html')
+    return render_template('auth.html')
 
 
 @main.route('/login', methods=['POST'])
 def login():
     form = request.form
     u = User(form)
-    user = Model.query.filter_by(username=u.username).first()
-    if u.valid_login(user):
+    user = u.query.filter_by(username=u.username).first()
+    if u.login_satisfied(user):
         session.permanent = True
-        session['uid'] = user.id
+        session['user_id'] = user.id
         return redirect('/blog')
-    else:
-        return redirect(url_for('.index'))
+    return redirect(url_for('.index'))
 
 
 @main.route('/register', methods=['POST'])
 def register():
     form = request.form
     u = User(form)
-    if u.valid():
+    if u.register_satisfied():
         u.save()
         session.permanent = True
-        session['uid'] = u.id
-        return redirect('/')
+        session['user_id'] = u.id
+        return redirect('/blog')
     else:
         return redirect(url_for('.index'))

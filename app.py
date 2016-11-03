@@ -4,6 +4,7 @@ from flask_script import Manager
 from models import db
 
 from models.blog import Blog
+from models.user import User
 from models.comment import Comment
 
 app = Flask(__name__)
@@ -13,16 +14,10 @@ manager = Manager(app)
 
 def register_routes(app):
     from routes.blog import main as routes_blog
-    # from routes.node import main as routes_node
-    # from routes.topic import main as routes_topic
-    # from routes.auth import main as routes_auth
-    # from routes.comment import main as routes_comment
+    from routes.auth import main as routes_auth
 
-    app.register_blueprint(routes_blog)
-    # app.register_blueprint(routes_auth, url_prefix='/auth')
-    # app.register_blueprint(routes_node, url_prefix='/node')
-    # app.register_blueprint(routes_topic, url_prefix='/topic')
-    # app.register_blueprint(routes_comment, url_prefix='/comment')
+    app.register_blueprint(routes_blog, url_prefix='/blog')
+    app.register_blueprint(routes_auth, url_prefix='/auth')
 
 
 def configure_app():

@@ -1,9 +1,10 @@
 {% extends "base.html" %}
+    <script src="/static/js/add_view.js></script>"
 {% block title %}
 Blog 添加
 {% endblock %}
 {% block content %}
-<form action="{{ url_for('.add') }}" method="post">
+    <form action="{{ url_for('.add') }}" method="post">
     <input name="title" placeholder="title">
     <input name="node" placeholder="node">
     <input name="brief" placeholder="brief">
